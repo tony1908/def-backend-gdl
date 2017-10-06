@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'danmificadosDb',
         'USER': 'root',
-        'PASSWORD': 'Mipass_12345',
+        'PASSWORD': '',
         'HOST': 'docker-mysql',
         'PORT': '',
     }
