@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'personas',
-    'rest_framework'
+    'rest_framework',
+    'lugares',
+    'User'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'danmificadosDb',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'Mipass_12345',
         'HOST': 'docker-mysql',
         'PORT': '',
     }
@@ -104,6 +106,23 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+AUTH_USER_MODEL = "User.User"
+
+JWT_AUTH = { 
+    'JWT_AUTH_HEADER_PREFIX': 'Auth',
+}
 
 
 # Internationalization

@@ -18,11 +18,27 @@ class PersonasCreationSerlializer(serializers.Serializer) :
 	sexo = serializers.CharField(max_length=5)
 	tipo_de_persona = serializers.CharField(max_length=50)
 
+	def create(self, validated_data):
+		return Personas.objects.create(**validated_data)
+
+class PersonasSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Personas
+		fields = '__all__'
+		# fields = ['nombre','edad','sexo','tipo_de_persona','id']
+
 class PersonasModifieSerliazer(serializers.Serializer) :
 	tipo_de_persona = serializers.CharField(max_length=50)
 
-class TodosSerializer2(serializers.ModelSerializer):
-	class Meta:
-		model = Personas
-		# fields = '__all__'
-		fields = ('nombre','edad','sexo', 'tipo_de_persona')
+	# def create(self, validated_data):
+	# 	return Personas.objects.create(**validated_data)
+
+	# def update(self, instance, validated_data):
+	# 	instance.tipo_de_persona = validated_data.get('tipo_de_persona', instance.tipo_de_persona)
+	# 	return instance
+
+# class PersonasSerializer(serializers.ModelSerializer):
+# 	class Meta:
+# 		model = Personas
+# 		# fields = '__all__'
+# 		fields = ('nombre','edad','sexo','tipo_de_persona')

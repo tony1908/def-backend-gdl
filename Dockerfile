@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.5
 COPY apiDamificados/requirements.txt /apiDamificados/requirements.txt
 RUN pip install -r /apiDamificados/requirements.txt  
 WORKDIR /apiDamificados
