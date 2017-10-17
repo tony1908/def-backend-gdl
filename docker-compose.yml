@@ -5,6 +5,7 @@ services:
     image: docker-api-devf
     ports:
       - "8000:8000"
+    container_name: pruebuqui-container
   docker-mysql:
     image: mysql
     environment:

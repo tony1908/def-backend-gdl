@@ -1,0 +1,12 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t docker-api-devf
+
+test:
+  override:
+    - docker-compose up
+    - docker exec -it pruebuqui-container python manage.py test
