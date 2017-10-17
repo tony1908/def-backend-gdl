@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   override:
-    - docker build -t docker-api-devf
+    - docker build -t docker-api-devf .
 
 test:
   override:
