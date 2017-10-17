@@ -15,4 +15,5 @@ dependencies:
 test:
   override:
     - docker-compose up -d
-    - docker exec -it pruebuqui-container python manage.py test
+    # - docker exec -it pruebuqui-container python manage.py test
+    - docker-compose exec django-clase python manage.py test
