@@ -25,7 +25,7 @@ class PersonasApi(APIView):
 		serializer = PersonasSerializer(data=request.data)
 		if serializer.is_valid():
 			serializer.save()
-			self._sendPushNotification("Nueva Persona Creada", "caEFQW5rjr8:APA91bGzRJmDNTc8U1MdTWARodHlcvAK9nv2KuTazSroy40NIPDB9am928q6onR3-xVlYLlYkhvIga-9KIS0cS7hS7OLmZwWrU5xmTciwJt3UWFaYhI_zUayJ3llPAeT7GYjx834yV8w")
+			# self._sendPushNotification("Nueva Persona Creada", "caEFQW5rjr8:APA91bGzRJmDNTc8U1MdTWARodHlcvAK9nv2KuTazSroy40NIPDB9am928q6onR3-xVlYLlYkhvIga-9KIS0cS7hS7OLmZwWrU5xmTciwJt3UWFaYhI_zUayJ3llPAeT7GYjx834yV8w")
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 		else:
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

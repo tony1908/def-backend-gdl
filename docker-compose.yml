@@ -9,3 +9,4 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=Mipass_12345
+      - MYSQL_DATABASE=danmificadosDb
