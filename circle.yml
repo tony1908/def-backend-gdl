@@ -1,24 +1,13 @@
 machine:
-  # pre:
-    # - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
-    # - pip install --upgrade pip
-    # - pip install docker-compose
   services:
     - docker
 
 dependencies:
-  # pre:
-  #   - sudo pip install docker-compose
   override:
     - docker pull mysql
     - docker build -t docker-api-devf .
-    - docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb -d mysql 
+    - docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb -d mysql
 
 test:
   override:
-    - docker ps
-    # - docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb -d mysql 
-    - docker run -it --link docker-mysql:mysql docker-api-devf
-    # - docker-compose up -d
-    # - docker exec -it pruebuqui-container python manage.py test
-    # - docker-compose exec django-clase python manage.py test
+    - docker run -it --link docker-mysql:mysql docker-api-devf sh tests.sh 
