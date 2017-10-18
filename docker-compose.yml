@@ -1,11 +1,13 @@
 version: '2'
 services: 
-  django-clase:
+  django-clase-dos:
     # build: .
     image: docker-api-devf
     ports:
       - "8000:8000"
-    container_name: pruebuqui-container
+    environment:
+      # - DJANGO_ENV=production
+    # container_name: pruebuqui-container
   docker-mysql:
     image: mysql
     environment:

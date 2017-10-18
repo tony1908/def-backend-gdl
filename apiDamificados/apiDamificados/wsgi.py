@@ -11,6 +11,10 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apiDamificados.settings.development")
+settingsEnv = "apiDamificados.settings." + os.environ.get('DJANGO_ENV')
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settingsEnv)
+
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "apiDamificados.settings.development")
 
 application = get_wsgi_application()
