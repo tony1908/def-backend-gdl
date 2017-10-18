@@ -14,7 +14,7 @@ dependencies:
 
 test:
   override:
-    - docker run --name -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb docker-mysql -d mysql 
+    - docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb -d mysql 
     - docker run -it --link docker-mysql:mysql docker-api-devf
     # - docker-compose up -d
     # - docker exec -it pruebuqui-container python manage.py test
