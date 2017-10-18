@@ -10,7 +10,7 @@ DATABASES = {
         'NAME': 'danmificadosDb',
         'USER': 'root',
         'PASSWORD': 'Mipass_12345',
-        'HOST': 'docker-mysql',
+        'HOST': 'docker-mysql-a',
         'PORT': '',
     }
 }
