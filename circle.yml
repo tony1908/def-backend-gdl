@@ -1,4 +1,3 @@
-# - run: bash .circleci/setup-heroku.sh
 machine:
   services:
     - docker
