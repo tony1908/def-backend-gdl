@@ -1,10 +1,11 @@
-- run: bash .circleci/setup-heroku.sh
+# - run: bash .circleci/setup-heroku.sh
 machine:
   services:
     - docker
 
 dependencies:
   override:
+    - bash setup-heroku.sh
     - docker pull mysql
     - docker build -t docker-api-devf .
     - docker run --name docker-mysql -e MYSQL_ROOT_PASSWORD=Mipass_12345 -e MYSQL_DATABASE=danmificadosDb -d mysql
