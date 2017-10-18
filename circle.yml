@@ -12,7 +12,7 @@ dependencies:
 
 test:
   override:
-    - docker run -it --link docker-mysql:mysql docker-api-devf sh tests.sh 
+    - docker run -it --link docker-mysql:mysql -e DJANGO_ENV=development docker-api-devf sh tests.sh 
 
 # - deploy:
 #       name: Deploy Master to Heroku
