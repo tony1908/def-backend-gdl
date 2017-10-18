@@ -8,5 +8,5 @@
 # fi
 
 echo "Mandndo a heroku"
-heroku container:push web --app $HEROKU_APP_NAME
+sudo heroku container:push web --app $HEROKU_APP_NAME
 echo "Se mando a heroku"
