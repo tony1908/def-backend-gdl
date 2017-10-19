@@ -5,9 +5,6 @@ services:
     image: docker-api-devf
     ports:
       - "8000:8000"
-    # environment:
-      # - DJANGO_ENV=production
-    # container_name: pruebuqui-container
   docker-mysql:
     image: mysql
     environment:
